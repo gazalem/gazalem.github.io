@@ -1,7 +1,7 @@
 // Global variables
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
-let pageLastModified = new Date(document.lastModified)
+let pageLastModified = new Date(document.lastModified);
 
 // insert the current year to the document
 document.getElementById("yearJS").textContent = currentYear;

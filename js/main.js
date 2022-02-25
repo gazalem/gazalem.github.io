@@ -15,5 +15,5 @@ try {
     };
     document.getElementById("lastUpdated").textContent = pageLastModified.toLocaleDateString("en-US", options);
 } catch (error) {
-    alert("The browser does not support Date locale")
+    alert("The browser does not support Date locale");
 }

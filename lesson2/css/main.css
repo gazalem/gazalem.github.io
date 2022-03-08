@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Nobile&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Corben', cursive;
+    font-weight: 400;
+}
+
+nav>ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+nav>ul>li>a {
+    text-decoration: none;
+    padding: 1rem;
+}
+
+nav>ul>li>a:hover {
+    color: red;
+    background-color: #CCC;
+    padding: 1rem;
+}
+
+body {
+    font-family: 'Nobile', sans-serif;
+}
+
+main, header {
+    max-width: 120vh;
+    margin: 0 auto;
+}
+
+section>img {
+    max-width: 120vh;
+}
+
+.sitelogo>img {
+    display: block;
+    height: 16rem;
+    width: 16rem;
+}
+
+/* Color Schemas */
+.colorPallette {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    height: 20rem;
+}
+
+.colorPallette>div:nth-child(1) {
+    background-color: #8ECAE6;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

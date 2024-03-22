@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Generator - JS Library</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css' integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==' crossorigin='anonymous'/>
+</head>
+<body>
+  <div class="container">
+    <div class="grid" style="--bs-columns: 3;">
+      <div class="g-start-2">
+        <form action="">
+          <div class="mb-3 col-6">
+            <label for="myURL" class="form-label">Ingrese URL:</label>
+            <input type="text" name="myURL" id="myURL" class="form-control" value="https://www.hill-realtors.com/">
+          </div>
+        </form>
+        <div id="qrcode"></div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!-- scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js' integrity='sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js' integrity='sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==' crossorigin='anonymous'></script>
+  <script>
+    var qrcode = new QRCode("qrcode", {
+      width: 300,
+      height: 300,
+      useSVG: true
+    });
+
+    function makeCode (){
+      var elText = document.getElementById("myURL");
+
+      if (!elText.value) {
+        alert("Enter a URL");
+        elText.focus();
+        return;
+      }
+
+      qrcode.makeCode(elText.value);
+    }
+
+    makeCode();
+
+    $("#myURL").
+      on("blur", function () {
+        makeCode();
+      }).
+      on("keydown", function (e) {
+        if (e.keyCode == 13) {
+          makeCode();
+        }
+      });
+  </script>
+</body>
+</html>
